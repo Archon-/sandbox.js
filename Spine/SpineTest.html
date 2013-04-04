@@ -3,16 +3,31 @@
 <head>
   <meta charset="utf8" />
   <title>Spine Test</title>
-
-  <!--  <script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>-->
+  <link rel="stylesheet" type="text/css" href="spine/test/lib/jasmine.css">
+  <link rel="stylesheet" type="text/css" href="spine/test/lib/spineTest.css">
+  <script type="text/javascript" src="spine/test/lib/jasmine.js"></script>
+  <script type="text/javascript" src="spine/test/lib/jasmine-html.js"></script>
+  <script type="text/javascript" src="spine/test/lib/dynamicLoader.js"></script>
+  <!--  <script src="spine/test/lib/jquery.js" type="text/javascript" charset="utf-8"></script>-->
   <script src="spine/lib/spine.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/lib/local.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/lib/relation.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="spine/test/specs/class.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/test/specs/events.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/test/specs/model.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/test/specs/model.local.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/test/specs/model.relation.js" type="text/javascript" charset="utf-8"></script>
+  <script src="spine/test/specs/controller.js" type="text/javascript" charset="utf-8"></script>
   
 </head>
 <body>
   <div id="test">
   </div>
   <script type="text/javascript">
-
+	var User = Spine.Class.create({
+		name: "John"
+	});
   </script>
 </body>
 </html>
