@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app>
+<head>
+	<title>Model, View, Scope - AngularJS</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="SimpleController">
+		<input type="text" ng-model="namex">
+		<p>&nbsp;{{namex}}</p>
+		<ul>
+			<li ng-repeat="cust in customers | filter: namex | orderBy: 'city'">{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+		</ul>
+	</div>
+	
+	<script>
+		function SimpleController($scope){
+			$scope.customers = [
+				{name: 'John Smith', city: 'Pheonix'}, 
+				{name: 'John Doe', city: 'Los Angeles'}, 
+				{name: 'Jane Doe', city: 'New York'}
+			];
+		}
+	</script>
+</body>
+</html>
