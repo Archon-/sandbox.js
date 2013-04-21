@@ -2,9 +2,15 @@
 	<h2>View 1</h2>
 	Name:
 	<br />
-	<input type="text" data-ng-model="name" />
+	<input type="text" data-ng-model="filter.name" />
 	<br />
 	<ul>
 		<li data-ng-repeat="cust in customers | filter:name | orderBy: 'city'"></li>
 	</ul>
+	Customer Name:<br />
+	<input type="text" data-ng-model="newCustomer.name" />
+	Customer City:<br />
+	<input type="text" data-ng-model="newCustomer.city />
+	<button ata-ng-click="addCustomer()">Add Customer</button>
+	<a href="/#view2">View 2</a>
 </div>

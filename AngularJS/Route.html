@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-US" ng-app="demoApp">
 <head>
-	<title>DemoApp (Controllers) - AngularJS</title>
+	<title>Route - AngularJS</title>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 </head>
 <body>
-	<!-- this is the right way to using controllers -->
-	<div ng-controller="SimpleController">
-		<input type="text" ng-model="namex">
-		<p>&nbsp;{{namex}}</p>
-		<ul>
-			<li ng-repeat="cust in customers | filter: namex | orderBy: 'city'">{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
-		</ul>
-	</div>
+	<!-- Placeholder for views -->
+	<div data-ng-view=""></div>
 	
 	<script>
 	
 		var demoApp = angular.module('demoApp', []);
+		
+		demoApp.config(function($routeProvider){
+			$routeProvider
+				.when('/',
+					{
+						controller: 'SimpleController',
+						templateUrl: 'Partials/View1.html'
+					})
+				.when('/view2',
+					{
+						controller: 'SimpleController',
+						templateUrl: 'Partials/View2.html'
+					})
+				.otherwise({ redirectTo: '/'});
+		});
 		
 		var controllers = {};
 		controllers.SimpleController = function($scope){
@@ -26,6 +35,13 @@
 				{name: 'John Doe', city: 'Los Angeles'}, 
 				{name: 'Jane Doe', city: 'New York'}
 			];
+			
+			$scope.addCustomer = function() {
+				$scope.customers.push({ 
+					name: $scope.newCustomer.name, 
+					city: $scope.newCustomer.city
+				})
+			}
 		}
 		demoApp.controller(controllers);
 		
