@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="demoApp">
+<head>
+	<title>DemoApp (Controllers) - AngularJS</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+</head>
+<body>
+	<!-- this is the right way to using controllers -->
+	<div ng-controller="SimpleController">
+		<input type="text" ng-model="namex">
+		<p>&nbsp;{{namex}}</p>
+		<ul>
+			<li ng-repeat="cust in customers | filter: namex | orderBy: 'city'">{{cust.name | uppercase}} - {{cust.city | lowercase}}</li>
+		</ul>
+	</div>
+	
+	<script>
+	
+		var demoApp = angular.module('demoApp', []);
+		
+		var controllers = {};
+		controllers.SimpleController = function($scope){
+			$scope.customers = [
+				{name: 'John Smith', city: 'Pheonix'}, 
+				{name: 'John Doe', city: 'Los Angeles'}, 
+				{name: 'Jane Doe', city: 'New York'}
+			];
+		}
+		demoApp.controller(controllers);
+		
+		/* //Another version
+		 var demoApp = angular.module('demoApp', []);
+		function SimpleController($scope){
+			$scope.customers = [
+				{name: 'John Smith', city: 'Pheonix'}, 
+				{name: 'John Doe', city: 'Los Angeles'}, 
+				{name: 'Jane Doe', city: 'New York'}
+			];
+		}
+		demoApp.controller('SimpleController', SimpleController);
+		 * */
+	</script>
+</body>
+</html>
