@@ -43,6 +43,12 @@
 				})
 			}
 		}
+		controllers.testController = function($scope){
+			$scope.ttt = [
+				{x1: 'val1', x2: 'val2'},
+				{y1: 'val1_y', y2: 'val2_y'}
+			];
+		}
 		demoApp.controller(controllers);
 		
 		/* //Another version
