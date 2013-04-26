@@ -5,12 +5,12 @@
 	<input type="text" data-ng-model="filter.name" />
 	<br />
 	<ul>
-		<li data-ng-repeat="cust in customers | filter:name | orderBy: 'city'"></li>
+		<li data-ng-repeat="cust in customers | filter:filter.name | orderBy: 'filter.city'">{{cust.name}} - {{cust.city}}</li>
 	</ul>
 	Customer Name:<br />
-	<input type="text" data-ng-model="newCustomer.name" />
+	<input type="text" data-ng-model="newCustomer.name" /><br/>
 	Customer City:<br />
-	<input type="text" data-ng-model="newCustomer.city />
-	<button ata-ng-click="addCustomer()">Add Customer</button>
-	<a href="/#view2">View 2</a>
+	<input type="text" data-ng-model="newCustomer.city /><br/>
+	<button data-ng-click="addCustomer()">Add Customer</button>
+	<a href="#view2">View 2</a>
 </div>

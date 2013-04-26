@@ -4,6 +4,7 @@
 	<title>Route - AngularJS</title>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+	<base href="http://localhost/archon/sandbox.js/AngularJS/Route.html" target="_blank">
 </head>
 <body>
 	<!-- Placeholder for views -->
@@ -29,7 +30,7 @@
 		});
 		
 		var controllers = {};
-		controllers.SimpleController = function($scope){
+		demoApp.controller(SimpleController = function($scope){
 			$scope.customers = [
 				{name: 'John Smith', city: 'Pheonix'}, 
 				{name: 'John Doe', city: 'Los Angeles'}, 
@@ -42,14 +43,16 @@
 					city: $scope.newCustomer.city
 				})
 			}
-		}
+		});
+		/*
 		controllers.testController = function($scope){
 			$scope.ttt = [
 				{x1: 'val1', x2: 'val2'},
 				{y1: 'val1_y', y2: 'val2_y'}
 			];
 		}
-		demoApp.controller(controllers);
+		*/
+		//demoApp.controller(controllers);
 		
 		/* //Another version
 		 var demoApp = angular.module('demoApp', []);
