@@ -27,19 +27,19 @@ app.config(function ($routeProvider) {
         .when('/customers',
             {
                 controller: 'CustomersController',
-                templateUrl: '/app/partials/customers.html'
+                templateUrl: '/archon/sandbox.js/AngularJS/AngularJSDemos/app/partials/customers.html'
             })
         //Define a route that has a route parameter in it (:customerID)
         .when('/customerorders/:customerID',
             {
                 controller: 'CustomerOrdersController',
-                templateUrl: '/app/partials/customerOrders.html'
+                templateUrl: '/archon/sandbox.js/AngularJS/AngularJSDemos/app/partials/customerOrders.html'
             })
         //Define a route that has a route parameter in it (:customerID)
         .when('/orders',
             {
                 controller: 'OrdersController',
-                templateUrl: '/app/partials/orders.html'
+                templateUrl: '/archon/sandbox.js/AngularJS/AngularJSDemos/app/partials/orders.html'
             })
         .otherwise({ redirectTo: '/customers' });
 });

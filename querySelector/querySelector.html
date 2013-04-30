@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demonstracja selektorów</title>
+
+    <style type="text/css">
+        td {
+            border-style: solid;
+            border-width: 1px;
+            font-size: 300%;
+        }
+        td:hover {
+            background-color: cyan;
+        }
+        #hoverResult {
+            color: green;
+            font-size: 200%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!--utworzenie tabeli 3 na 3 -->
+        <table>
+            <tr>
+                <td>A1</td> <td>A2</td> <td>A3</td>
+            </tr>
+            <tr>
+                <td>B1</td> <td>B2</td> <td>B3</td>
+            </tr>
+            <tr>
+                <td>C1</td> <td>C2</td> <td>C3</td>
+            </tr>
+        </table>
+        
+        <div>Zaznacz przycisk, najedŸ mysz¹ na komórki tabeli i naciœnij Enter, aby je zidentyfikowaæ przy wykorzystaniu querySelector('td:hover').</div>
+        <button type="button" id="findHover" autofocus>ZnajdŸ komórkê 'td:hover'</button>
+        <div id="hoverResult"></div>
+        
+        <script type="text/javascript">
+            document.getElementById("findHover").onclick = function() {
+                // znajdŸ komórkê tabeli, nad któr¹ znajduje siê mysz
+                var hovered = document.querySelector("td:hover");
+                if (hovered)
+                  document.getElementById("hoverResult").innerHTML = hovered.innerHTML;
+            }
+        </script>
+    </section>
+</body>
+</html>
