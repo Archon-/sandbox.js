@@ -1,0 +1,456 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 48px;
+	line-height: 48px;
+	letter-spacing: -1px;
+	margin-bottom:24px;
+}
+
+.large, h2 {
+	font-size: 48px;
+	line-height: 48px;
+	margin-bottom:24px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 22px;
+	line-height: 30px;
+}
+
+
+body {
+	font: 16px/24px Georgia, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+
+/*
+		Color:
+		darker_blue:#242029;
+		lighter_blue:#3B4A59;
+		darker_green:#418261;
+		lighter_green:#A4AD23;
+		orange:#FFA100;
+
+
+*/
+
+
+html{
+	background:url(../img/gplaypattern.png) top left repeat;
+	
+}
+
+
+h1,h2,h3,h4,h5,h6{
+	font-family:'PT Serif', Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+	color:#3B4A59;
+	margin-bottom:24px;
+}
+
+body {
+	width: 896px;
+	padding: 72px 48px 84px;
+	background: #fff;
+	
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+body{
+	
+	font-family:'PT Sans', Verdana, Geneva, sans-serif;
+	margin:24px auto;
+	color:#444444;	
+	-webkit-box-shadow:  0px 1px 4px 2px #cccccc;
+     box-shadow:  0px 1px 4px 2px #cccccc;
+}
+
+#logo{
+	text-align:center;
+}
+
+#logo a{
+	font-size: 68px;
+	line-height: 72px;
+	letter-spacing: -1px;
+	text-decoration:none;
+	color:#A4AD23;
+	text-align:center;
+	font-style:italic;
+	font-family:'PT Serif', Georgia, "Times New Roman", Times, serif;
+}
+
+#logo a:hover{
+	color:#418261;
+}
+
+nav{
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	margin:24px 0;
+}
+
+nav ul {
+	text-align:center;
+	margin:0;
+}
+
+nav ul li{
+	display:inline;
+	text-align:center;
+	border-left:1px dotted #ccc;
+	padding-left:6px;
+}
+
+nav ul li:first-child{
+	border-left:none;
+}
+
+nav ul li a{
+	display:inline-block;
+	text-align:center;
+	padding:12px 6px;
+	text-decoration:none;
+	margin:0;
+	color:#3B4A59;
+}
+
+nav ul li a:hover,
+nav ul li.active a{
+	color:#418261;
+	
+}
+
+#
+
+.flexslider{
+	display:block;
+	
+	
+}
+
+.flex-control-nav{
+	border-bottom:1px solid #ccc;
+}
+
+
+#content section{
+	width:528px;
+	float:left;
+}
+
+#content section p{
+	margin-bottom:24px;
+}
+
+#content section img{
+	width:100%;
+	height:auto;
+	-webkit-box-shadow:  0px 1px 4px 2px #cccccc;
+     box-shadow:  0px 1px 4px 2px #cccccc;
+	 margin-bottom:24px;
+}
+
+.video embed,
+.video object,
+.video iframe {
+	width: 100%;
+	min-height:300px;
+	height: auto;
+	margin-bottom:24px;
+	-webkit-box-shadow:  0px 1px 4px 2px #cccccc;
+     box-shadow:  0px 1px 4px 2px #cccccc;
+}
+
+aside#sidebar{
+	width:344px;
+	margin-left:24px;
+	float:left;
+}
+
+footer{
+	clear:both;
+}
+
+#copyrights{
+	text-align:center;
+	width:100%;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	margin:48px 0 0 0;
+	font-size:11px;
+	font-family:'PT Serif', Georgia, "Times New Roman", Times, serif;
+	font-style:italic;
+}
+
+#copyrights a{
+	text-decoration:none;
+	color:#444444;
+}
+
+#copyrights a:hover{
+	color:#FFA100;
+}
+
+
+#corner{
+	position:fixed;
+	right:0;
+	bottom:0;
+	display:block;
+	height:84px;
+	width:84px;
+	background:url('../img/corner.png') top left no-repeat;
+}
+
+
+/*PAGE*/
+
+.page #slider img{
+	width:100%;
+	height:auto;
+	-webkit-box-shadow:  0px 1px 4px 2px #cccccc;
+     box-shadow:  0px 1px 4px 2px #cccccc;
+	 margin-bottom:24px;
+}
+
+.page #sidebar h3{
+	margin:12px 0 24px 0;
+	line-height:38px;
+}
+
+.page #sidebar ul{
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+
+.page #sidebar ul li{
+	display:block;
+	border-bottom:1px solid #ccc;
+	min-height:36px;
+	line-height:36px;
+}
+
+.page #sidebar ul li:first-child{
+	display:block;
+	border-top:1px solid #ccc;
+}
+
+.page #sidebar ul li a{
+	min-height:36px;
+	line-height:36px;
+	text-decoration:none;
+	color:#418261;
+	font-size:16px;
+	display:block;
+	padding-left:12px;
+}
+
+.page #sidebar ul li.active a,
+.page #sidebar ul li a:hover{
+	background:#418261;
+	color:#fff;
+	
+}
+
+.contact form{
+	margin:24px 0;
+}
+
+.contact form label{
+	font-size:14px;
+	display:block;
+	color:#3B4A59;
+}
+
+.contact form input[type=text]{
+	height:24px;
+	width:80%;
+	border:1px solid #3B4A59;
+	line-height:24px;
+	padding-left:12px;
+	color:#242029;
+	margin:0 0 12px 0;
+}
+
+.contact form input[type=submit]{
+	clear:left;
+	display:block;
+	width:96px;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+	background:#FFA100;
+	color:#fff;
+	border:0;
+	cursor:pointer;
+	font-size:14px;
+}
+
+.contact form textarea{
+	height:120px;
+	width:80%;
+	border:1px solid #3B4A59;
+	line-height:12px;
+	padding-left:12px;
+	color:#242029;
+	margin:0 0 12px 0;
+}
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	body {
+		width: 712px;
+		padding: 48px 28px 60px;
+	}
+	
+	#content section{
+		width:100%;
+		float:none;
+	}
+	
+	aside#sidebar{
+		width:100%;
+		float:none;
+		margin-left:0;
+	}
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	
+	body {
+		width: 252px;
+		padding: 48px 34px 60px;
+	}
+	
+	#content section{
+		width:100%;
+		float:none;
+	}
+	
+	aside#sidebar{
+		width:100%;
+		float:none;
+		margin-left:0;
+		
+	}
+	
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body {
+		width: 436px;
+		padding: 36px 22px 48px;
+	}
+	
+	#content section{
+		width:100%;
+		float:none;
+	}
+	
+	aside#sidebar{
+		width:100%;
+		float:none;
+		margin-left:0;
+		
+	}
+	
+}
