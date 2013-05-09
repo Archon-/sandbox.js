@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>scrollTop</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+        function OnScrollDiv (div) {
+			var info = document.getElementById ("info");
+			info.innerHTML = "Horizontal: " + div.scrollLeft
+							+ "px<br/>Vertical: " + div.scrollTop + "px";
+        }
+    </script>
+</head>
+<body>
+	<div>
+		<table cellpadding="0px" cellspacing="0px" style="width:100%">
+			<tr>
+				<td height="30" align="center" style="background-color:#ffffff; border-bottom:1px solid #000000; padding-bottom:5px;">
+					<span style="font-size:20px;">scrollTop property example</span>
+				</td>
+			</tr>
+			<tr height="300">
+				<td align="center" valign="middle" style="padding-top:15px; padding-bottom:10px;">
+    <div style="width:200px;height:200px; overflow:auto;" onscroll="OnScrollDiv (this)">
+		Please scroll this field!
+		<div style="height:300px; width:2000px; background-color:#a08080;"></div>
+		Please scroll this field!
+		<div style="height:300px; width:2000px; background-color:#a08080;"></div>
+		Please scroll this field!
+    </div>
+	<br /><br />
+	Current scroll amounts:
+	<div id="info"></div>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" class="copyright">
+					<a target="_blank" rel="nofollow" href="http://www.dottoro.com/tou.php">&copy; 2011 Dottoro.com. All rights reserved. Terms of use.</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
