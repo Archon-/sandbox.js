@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Setting Attributes - Model - Backbones.js</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../underscore-min.js"></script>
+	<script src="../backbone-min.js"></script>
+</head>
+<body>
+	<script>
+		Person = Backbone.Model.extend({
+	        initialize: function(){
+	            console.log("Welcome to this world");
+	        }
+	    });
+	    
+	    var person = new Person({ name: "Thomas", age: 67});
+	    // or we can set afterwards, these operations are equivelent
+	    //var person = new Person();
+	    //person.set({ name: "Thomas", age: 67});
+	</script>
+</body>
+</html>
