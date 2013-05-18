@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Manipulating Model - Model - Backbones.js</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../underscore-min.js"></script>
+	<script src="../backbone-min.js"></script>
+</head>
+<body>
+	<script>
+		Person = Backbone.Model.extend({
+	        defaults: {
+	            name: 'Fetus',
+	            age: 0,
+	            child: ''
+	        },
+	        initialize: function(){
+	            console.log("Welcome to this world");
+	        },
+	        adopt: function( newChildsName ){
+	            this.set({ child: newChildsName });
+	        }
+	    });
+	    
+	    var person = new Person({ name: "Thomas", age: 67, child: 'Ryan'});
+	    person.adopt('John Resig');
+	    var child = person.get("child"); // 'John Resig'
+	</script>
+</body>
+</html>
