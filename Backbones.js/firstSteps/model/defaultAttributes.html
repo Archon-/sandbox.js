@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Setting Attributes - Model - Backbones.js</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../underscore-min.js"></script>
+	<script src="../backbone-min.js"></script>
+</head>
+<body>
+	<script>
+		Person = Backbone.Model.extend({
+	        defaults: {
+	            name: 'Fetus',
+	            age: 0,
+	            child: ''
+	        },
+	        initialize: function(){
+	            console.log("Welcome to this world");
+	        }
+	    });
+	    
+	    var person = new Person({ name: "Thomas", age: 67, child: 'Ryan'});
+	    
+	    var age = person.get("age"); // 67
+	    var name = person.get("name"); // "Thomas"
+	    var child = person.get("child"); // 'Ryan'
+	    
+	    // Try to set some data without, for example, age
+	    var me = new Person({name: 'Archon', child: 'Thom'});
+	    
+	    // Now check what's the age of me
+	    var myAge = me.get('age');
+	</script>
+</body>
+</html>
