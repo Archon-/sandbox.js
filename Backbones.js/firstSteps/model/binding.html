@@ -12,20 +12,19 @@
 		Person = Backbone.Model.extend({
 	        defaults: {
 	            name: 'Fetus',
-	            age: 0,
-	            child: ''
+	            age: 0
 	        },
 	        initialize: function(){
 	            console.log("Welcome to this world");
-	        },
-	        adopt: function( newChildsName ){
-	            this.set({ child: newChildsName });
+	            this.on("change:name", function(model){
+	                var name = model.get("name"); // 'Stewie Griffin'
+	                console.log("Changed my name to " + name );
+	            });
 	        }
 	    });
 	    
-	    var person = new Person({ name: "Thomas", age: 67, child: 'Ryan'});
-	    person.adopt('John Resig');
-	    var child = person.get("child"); // 'John Resig'
+	    var person = new Person({ name: "Thomas", age: 67});
+	    person.set({name: 'Stewie Griffin'}); // This triggers a change and will alert()
 	</script>
 </body>
 </html>
