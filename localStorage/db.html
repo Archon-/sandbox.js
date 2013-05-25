@@ -8,13 +8,18 @@
 		
 		
 		// Creating of Car object
-		var car = {};
+		var car = {
+			construct: function(){
+				console.log('Construct!');	
+			}()
+		};
 		car.wheels = 4;
 		car.doors = 2;
 		car.sound = 'vroom';
 		car.name = 'Lightning McQueen';
 		car.stack = [];
 		car.stack.push('aa');
+
 		
 		/*
 		// First stringify object and save it into localStorage
@@ -60,13 +65,18 @@
 		}
 		
 		Storage.prototype.read = function(){
+			console.log('reading...');
 			return JSON.parse(localStorage.getItem('db'));
 		}
 		
 		Storage.prototype.save = function(){
+			console.log('saving...');
 			localStorage.setItem('db', JSON.stringify(car));
 			return true;
 		}
+		
+		var db = {};
+		db = localStorage;
 	</script>
 </head>
 <body>
