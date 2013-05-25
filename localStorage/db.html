@@ -6,7 +6,7 @@
 	<script>
 		// Managing of object in localStorage
 		
-		/*
+		
 		// Creating of Car object
 		var car = {};
 		car.wheels = 4;
@@ -16,6 +16,7 @@
 		car.stack = [];
 		car.stack.push('aa');
 		
+		/*
 		// First stringify object and save it into localStorage
 		localStorage.setItem('car', JSON.stringify(car));
 		
@@ -56,6 +57,15 @@
 		
 		Storage.prototype.add = function(obj){
 			console.log('Added '+obj)
+		}
+		
+		Storage.prototype.read = function(){
+			return JSON.parse(localStorage.getItem('db'));
+		}
+		
+		Storage.prototype.save = function(){
+			localStorage.setItem('db', JSON.stringify(car));
+			return true;
 		}
 	</script>
 </head>
