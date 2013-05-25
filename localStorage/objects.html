@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>object - localStorage</title>
+	<meta charset="utf-8">
+	<script>
+		// Managing of object in localStorage
+		
+		// Creating of Car object
+		var car = {};
+		car.wheels = 4;
+		car.doors = 2;
+		car.sound = 'vroom';
+		car.name = 'Lightning McQueen';
+		car.stack = [];
+		car.stack.push('aa');
+		
+		// First stringify object and save it into localStorage
+		localStorage.setItem('car', JSON.stringify(car));
+		
+		// Read string from localStorage, parse JSON string to make object, ascribe to variable
+		var newCar = JSON.parse(localStorage.getItem('car'));
+		
+		newCar.stack.push('bb');
+		
+		// How to operate on object and save it to the locaStorage? Look at 'db.html' file...
+	</script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
