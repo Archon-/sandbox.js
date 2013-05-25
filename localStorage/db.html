@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Object Management - localStorage</title>
+	<meta charset="utf-8">
+	<script>
+		// Managing of object in localStorage
+		
+		/*
+		// Creating of Car object
+		var car = {};
+		car.wheels = 4;
+		car.doors = 2;
+		car.sound = 'vroom';
+		car.name = 'Lightning McQueen';
+		car.stack = [];
+		car.stack.push('aa');
+		
+		// First stringify object and save it into localStorage
+		localStorage.setItem('car', JSON.stringify(car));
+		
+		// Read string from localStorage, parse JSON string to make object, ascribe to variable
+		var newCar = JSON.parse(localStorage.getItem('car'));
+		
+		newCar.stack.push('bb');
+		
+		// How to operate on object and save it to the locaStorage? Look at 'db.html' file...
+		*/
+		
+		/*
+		localStorage.prototype.add = function(){
+			console.log('Dodano objekt');
+			return false;
+		}
+		*/
+		
+		/*
+		Array.prototype.inArray = function(needle){
+			for(var i = 0, len = this.length; i < len; i++){
+				if(this[i] === needle){
+					return true;
+				}
+			}
+			return false;
+		}
+		*/
+		
+		/*
+		Array.prototype.add = function(aa){
+			if(this.push(aa))
+				return true;
+			else
+				return false;
+		}
+		*/
+		
+		Storage.prototype.add = function(obj){
+			console.log('Added '+obj)
+		}
+	</script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
