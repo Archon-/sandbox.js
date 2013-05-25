@@ -19,46 +19,6 @@
 		car.name = 'Lightning McQueen';
 		car.stack = [];
 		car.stack.push('aa');
-
-		
-		/*
-		// First stringify object and save it into localStorage
-		localStorage.setItem('car', JSON.stringify(car));
-		
-		// Read string from localStorage, parse JSON string to make object, ascribe to variable
-		var newCar = JSON.parse(localStorage.getItem('car'));
-		
-		newCar.stack.push('bb');
-		
-		// How to operate on object and save it to the locaStorage? Look at 'db.html' file...
-		*/
-		
-		/*
-		localStorage.prototype.add = function(){
-			console.log('Dodano objekt');
-			return false;
-		}
-		*/
-		
-		/*
-		Array.prototype.inArray = function(needle){
-			for(var i = 0, len = this.length; i < len; i++){
-				if(this[i] === needle){
-					return true;
-				}
-			}
-			return false;
-		}
-		*/
-		
-		/*
-		Array.prototype.add = function(aa){
-			if(this.push(aa))
-				return true;
-			else
-				return false;
-		}
-		*/
 		
 		Storage.prototype.add = function(obj){
 			console.log('Added '+obj)
@@ -77,6 +37,17 @@
 		
 		var db = {};
 		db = localStorage;
+		
+		// Curiosity!
+		// Initial method in JavaScript
+		var obj = new (function() {
+		    this.prop = function() {
+		        console.log('This just ran.');
+		    }
+		
+		    // init code goes here:
+		    this.prop();
+		});
 	</script>
 </head>
 <body>
