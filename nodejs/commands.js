@@ -4,7 +4,7 @@ var exec = require('child_process').exec;
 var child;
 
 // executes `pwd`
-child = exec("ls -l", function (error, stdout, stderr) {
+child = exec("./example_c", function (error, stdout, stderr) {
   sys.print('stdout: ' + stdout);
   sys.print('stderr: ' + stderr);
   if (error !== null) {
