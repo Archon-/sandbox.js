@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript Chaining - Calculator example</title>
+    </head>
+    <body>
+		<script>
+		var calculator = {
+			add: function(n) {
+				if (typeof n === "number") {
+					calculator.result += n;
+				}
+				return calculator;
+			},
+			subtract: function(n) {
+				if (typeof n === "number") {
+					calculator.result -= n;
+				}
+				return calculator;
+			},
+			multiply: function(n) {
+				if (typeof n === "number") {
+					calculator.result *= n;
+				}
+				return calculator;
+			},
+			divide: function(n) {
+				if (typeof n === "number" && n !== 0) {
+					calculator.result /= n;
+				}
+				return calculator;
+			},
+			getResult: function() { return calculator.result; },
+			result: 0
+		};
+		</script>		
+    </body>
+</html>
