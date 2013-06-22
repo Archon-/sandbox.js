@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>scrollTop</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+
+    </script>
+    <style>
+		body {
+		    padding-top: 40px;
+		    font: normal 13px 'Helvetica Neue', Helvetica, sans-serif;
+		}
+		
+		#navbar {
+		    border-bottom: 1px solid red;
+		    background: #ddd;
+		    width: 100%;
+		    top: 0;
+		    position: fixed;
+		}
+		
+		#navbar li {
+		    padding: 10px 22px 10px 10px;
+		    float: left;
+		}
+		
+		#navbar a {
+		    text-decoration: none;
+		    color: #000;
+		}
+		
+		#navbar .active a {
+		    color: red;
+		}
+		
+		/* Remove this if you want to try $('body').scrollspy(); */
+		#content {
+		    height: 300px;
+		    overflow-y: scroll;
+		}
+		
+		.page {
+		    border: 1px solid #ddd;
+		    border-width: 1px 0;
+		    background: #f7f7f7;
+		    margin: 20px 0;
+		    padding: 200px;
+		    height: 250px;
+		}
+   	</style>
+</head>
+<!--
+	There are needed this line:
+		data-spy="scroll"
+	to run this example... to detect scrolling.
+-->
+<body data-spy="scroll" data-target="#navbar">
+<nav id="navbar">
+  <ul class="nav">
+    <li><a href="#page1">Page 1</a></li>
+    <li><a href="#page2">Page 2</a></li>
+    <li><a href="#page3">Page 3</a></li>
+    <li><a href="#page4">Page 4</a></li>
+    <li><a href="#page5">Page 5</a></li>
+  </ul>
+</nav>
+
+
+  <section id="page1" class="page">
+    <h1>Page 1</h1>
+  </section>
+
+  <section id="page2" class="page">
+    <h1>Page 2</h1>
+  </section>
+
+  <section id="page3" class="page">
+    <h1>Page 3</h1>
+  </section>
+
+  <section id="page4" class="page">
+    <h1>Page 4</h1>
+  </section>
+
+  <section id="page5" class="page">
+    <h1>Page 5</h1>
+  </section>
+  
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://twitter.github.io/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+</body>
+</html>
