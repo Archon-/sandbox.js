@@ -8,7 +8,7 @@
         <script src="js/script.js"></script>
     </head>
     <body>
-            <canvas id="scene" width="800" height="600"></canvas>
+            <!--<canvas id="scene" width="800" height="600"></canvas>-->
             <div id="main" style="color:#000">
 		      <h1>Paths:</h1>
 		      <ul id="paths"></ul>
@@ -30,6 +30,7 @@
 				  //document.getElementById('t').innerHTML = 'stdout: '+window.so+', stderr: '+window.se+', sx: '+window.sx;
 				  //document.getElementById('t').innerHTML = 'c: '+c.stdout;
 				  
+				  /*
 				  for (var key in c) {
 				  	if(key == 'stdout'){
 				  		for(var key2 in c[key])
@@ -37,9 +38,37 @@
 				  	}
 					  	//document.getElementById('t').innerHTML += 'k: '+key+', o: '+c[key]+'<br/>';
 				  }
+				  */
 				
 				  window.dispatchEvent(new Event('app-done'));
 				});
+				/*
+				function httpGet()
+				{
+					var theUrl = 'http://127.0.0.1:8000';
+					
+				    if (window.XMLHttpRequest)
+				    {// code for IE7+, Firefox, Chrome, Opera, Safari
+				        xmlhttp=new XMLHttpRequest();
+				    }
+				    else
+				    {// code for IE6, IE5
+				        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+				    }
+				    xmlhttp.onreadystatechange=function()
+				    {
+				        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+				        {
+				        	document.getElementById('t').innerHTML = xmlhttp.responseText;
+				            //return xmlhttp.responseText;
+				        }
+				    }
+				    xmlhttp.open("GET", theUrl, false );
+				    xmlhttp.send();    
+				}
+				
+				httpGet();
+				*/
             </script>
     </body>
 </html>
