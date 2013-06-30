@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML5 Game Development - Lesson 7 | Script Tutorials</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery-1.5.2.min.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+            <canvas id="scene" width="800" height="600"></canvas>
+            <div id="main" style="color:#000">
+		      <h1>Paths:</h1>
+		      <ul id="paths"></ul>
+		    </div>
+		    <div id="t" style="color:#000"></div>
+            <script>
+				addEventListener('app-ready', function(e){
+				  var fs   = require('fs'),
+				      path = require('path'),
+				      cwd  = process.cwd(),
+				      ul   = document.getElementById('paths');
+				
+				  fs.readdirSync(cwd).forEach(function(child){
+				    var li = document.createElement('li');
+				    li.textContent = path.resolve(cwd, child);
+				    ul.appendChild(li);
+				  });
+				
+				  //document.getElementById('t').innerHTML = 'stdout: '+window.so+', stderr: '+window.se+', sx: '+window.sx;
+				  //document.getElementById('t').innerHTML = 'c: '+c.stdout;
+				  
+				  for (var key in c) {
+				  	if(key == 'stdout'){
+				  		for(var key2 in c[key])
+				  			document.getElementById('t').innerHTML += 'k: '+key2+', o: '+c[key][key2]+'<br/>';
+				  	}
+					  	//document.getElementById('t').innerHTML += 'k: '+key+', o: '+c[key]+'<br/>';
+				  }
+				
+				  window.dispatchEvent(new Event('app-done'));
+				});
+            </script>
+    </body>
+</html>
