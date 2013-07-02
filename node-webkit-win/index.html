@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    
+    <div id="main">
+
+    </div>
+    
+    <button type="button" id="popup">Popup</button>    
+    <button type="button" id="fullscrn">Fullscreen Mode</button>
+    <button type="button" id="restore">Restore</button>
+    <button type="button" id="exit">Exit</button>
+    
+    <div id="t"></div>
+
+    <script>
+    	document.getElementById('exit').addEventListener("click", exit, false);
+    	document.getElementById('popup').addEventListener("click", popup, false);
+    	document.getElementById('fullscrn').addEventListener("click", fullScrn, false);
+    	document.getElementById('restore').addEventListener("click", restore, false);
+    	
+    	function exit(){
+    		window.close('popup.html');
+    	} 	
+    	
+    	function popup(){
+    		window.open('popup.html', '_blank', 'screenX=0,screenY=0,width=100,height=100');
+    	}
+    	
+    	function fullScrn(){
+    		require('nw.gui').Window.get().enterFullscreen();
+    	}
+    	
+    	function restore(){
+    		window.leaveFullscreen()
+    	}
+    </script>
+  </body>
+</html>
