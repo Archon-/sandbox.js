@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>anonymous functions</title>
+	<meta charset="utf-8">
+	<script>
+		// sample of anonymous data:
+		"test";
+		
+		// another sample...
+		[1, 2, 3];
+		
+		// and anothers...
+		undefined; 
+		null; 
+		1;
+		
+		// anonymous function
+			// sample function - adding values
+			// Attension! We really need to remember about brackets "()" to call these functions		
+			function add(a, b){
+				console.log( a() + b() );
+			}
+			
+			// call function giving anonymous function instead variable/values
+			add(function(){return 1;}, function(){return 2;});
+	</script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
