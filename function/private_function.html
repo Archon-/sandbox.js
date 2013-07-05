@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>private functions</title>
+	<meta charset="utf-8">
+	<script>
+		// function inside function is sth like private
+		// can be called only from inside of function
+		function externalFn(){
+			// internal functions
+			function internA(){
+				console.log('internal A!');
+			}
+			
+			function internB(){
+				console.log('internal B!');
+			}
+			
+			internB();
+			console.log('End!');
+		}
+		
+		externalFn();
+	</script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
