@@ -16,11 +16,27 @@
 				console.log('internal B!');
 			}
 			
+			this.internC = function()    // buy_food is visible to all
+		    {
+		        console.log('Non priv fn()');
+		    }
+			
 			internB();
 			console.log('End!');
 		}
 		
-		externalFn();
+		//externalFn();
+		
+		// private function as private method
+		/*
+		var obj = {
+			nonPriv: function(){
+				console.log('non priv method');
+			},
+			
+			
+		}
+		*/
 	</script>
 </head>
 <body>
