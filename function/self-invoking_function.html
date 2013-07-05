@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>self-invoking function</title>
+	<meta charset="utf-8">
+	<script>
+		// the simplest example of self-invoking function
+		(
+			function(){
+				console.log('self-invoking function.');
+			}
+		)();
+		
+		// self-invoking function with one argument
+		var arg = 'someName';
+		
+		(
+			function(arg){
+				console.log('argument name is '+arg);
+			}
+		)(arg);
+		
+		// notation with exclamation mark is the same as example above
+		!function(){
+			console.log('..!.');
+		}();
+		
+		// application of self-invoke function
+		// for instance in infinite loop of setInterval/setTimeout (actually this application od SI/ST is bad practice - don't do it at home)
+		!function foo(){
+			console.log('Say sth...');
+			// all code here...
+			setTimeout(foo, 1000);
+		}(); 
+	</script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
