@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>closure inside loop</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function f(){
+			var a = [];
+			var i;
+			
+			for(i = 0; i < 3; i++){
+				a[i] = function(){
+					return i;
+				}
+			}
+			
+			return a;
+		}
+		
+		// try to call function using...
+		var a = f();
+		
+		console.log(a[0]());
+		console.log(a[1]());
+		console.log(a[2]());
+		// what we get is array with 3 values 3.
+		// The reason why this happens is three closure show references to variable i. After loop finish value of i variable is 3.
+		 
+		// To solve this problem we have to use one more closure 
+		function f2(){
+			var a = [];
+			var i;
+			
+			for(i = 0; i < 3; i++){
+				a[i] = (function(x){
+					return function(){
+						return x;
+					}
+				})(i);
+			}
+			
+			return a;
+		}
+		
+		// Let's try now...
+		var b = f2();
+		console.log(b[0]());
+		console.log(b[1]());
+		console.log(b[2]());
+		
+		// Got this! Yeah!
+    </script>
+</head>
+<body>
+	<p>&nbsp;</p>
+</body>
+</html>
