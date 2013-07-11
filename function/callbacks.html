@@ -23,15 +23,15 @@
 		
 		// Example via http://recurial.com/programming/understanding-callback-functions-in-javascript/
 		
-		// another example
-		var a = 1;
-		
+		// another example		
 		function cb1(callback){
 			var b = 2;
 			callback(b);
 		}
 		
-		cb1(function(www){console.log('callback is: '+www)});
+		cb1(function(www){
+			console.log('callback is: '+www)
+		});
 	</script>
 </head>
 <body>
