@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>AJAX - jQuery</title>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+	function ajax(url, callback){
+		$.ajax({
+			url: url, //"server.html"
+			context: document.body
+		}).done(function(data) {
+			callback(data);
+		});
+	}	
+	
+	ajax('server.html', function(a){
+		console.log('Data from server by callback function is: '+a);
+	})
+	</script>
+</head>
+<body>
+	<p>nothing here...</p>
+	<p>please, look at source files to see all code.</p>
+</body>
+</html>
+
