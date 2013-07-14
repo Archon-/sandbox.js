@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Detect Page Size</title>
+	<meta charset="utf-8">
+	<script>
+		// Display size.	
+		var pageHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight,
+			pageWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
+			
+		// and all of this without any framework.
+		
+		// Screen resolution size below.
+		var sWidth = screen.availWeight,
+			sHeight = screen.availHeight;
+			
+	</script>
+</head>
+<body>
+	<div style="width: 200px">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque, ipsum eu pulvinar semper, nisi nisi ullamcorper est, ut pharetra lectus augue vitae lorem. Nullam viverra elit ligula, in porttitor libero elementum a. Curabitur pretium in mi sed dignissim. Proin sed mi dui. Donec dictum elit non augue porttitor porttitor. Proin ut lorem felis. In lacinia, nisl ac semper aliquam, dolor mauris egestas mi, accumsan aliquam nibh lectus id metus. Donec pharetra, risus vel hendrerit placerat, velit enim cursus libero, id pretium libero nunc at lectus.</p>
+	
+		<p>In consequat lacus eu luctus malesuada. Donec id quam eget metus scelerisque sodales ut ut sapien. Nulla suscipit fringilla sem, mollis placerat nisl auctor congue. Quisque pellentesque libero feugiat, luctus leo ut, vehicula risus. Curabitur fermentum placerat laoreet. Quisque tincidunt eget est nec sodales. Quisque quis malesuada est.</p>
+	
+		<p>Duis feugiat metus non orci convallis tempor. Morbi quis venenatis leo. Ut at orci nulla. Cras volutpat tellus nunc, sit amet adipiscing enim pulvinar ut. Donec eu justo lacinia, sodales diam eu, interdum dui. Vestibulum tincidunt dolor elit, ut posuere lectus aliquam vitae. Donec tortor diam, ornare et lorem in, luctus semper tortor. Integer ac hendrerit nulla, aliquam sagittis turpis. Cras auctor elementum metus, quis vehicula nibh sollicitudin non. Suspendisse vel nunc non tellus suscipit volutpat et imperdiet neque.</p>
+	
+		<p>Sed a erat vel nisi mattis dignissim. Quisque nec ante diam. Suspendisse ultricies, dui et lobortis consequat, nibh nisi facilisis mi, aliquam venenatis tortor urna eget diam. Nam dui purus, pharetra id tempus in, aliquam nec velit. Ut condimentum eget nibh vitae commodo. Sed vitae posuere ligula, placerat tempor risus. Nam in eros cursus, aliquam mauris ac, hendrerit turpis. Curabitur ut nulla quam. Donec condimentum ac dolor vel pretium. Integer nisi nibh, gravida ut dui nec, suscipit porttitor ipsum.</p>
+	</div>
+	<script>
+	// All site size below.
+		var dWidth = document.width,
+			dHeight = document.height;
+	</script>
+</body>
+</html>
+
