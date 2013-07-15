@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Prototype</title>
+	<script>
+		var myObject = function(name){
+		    this.name = name;
+		    return this;
+		};
+		 
+		console.log(typeof myObject.prototype); // object
+		 
+		myObject.prototype.getName = function(){
+		    return this.name;
+		};
+	</script>
+</head>
+
+<body>
+	<p>NaN</p>
+</body>
+</html>
