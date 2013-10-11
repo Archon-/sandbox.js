@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>objects - CoffeeScript</title>
+  <link rel="canonical" href="http://coffeescript.org" />
+</head>
+<body>
+  <script src="coffee-script.js"></script>
+  <script type="text/coffeescript">
+    ##// Objects in CoffeScript
+    tmpObj = 
+      title: 'Nice Object'
+      description: 'This is the funny description of Object'
+      details:
+        homepage: 'http://object.com'
+        rss: 'http://object.com/feed'
+
+    console.log(tmpObj.details.rss);
+  </script>
+</body>
+</html>
