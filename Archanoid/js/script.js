@@ -155,6 +155,7 @@ function drawScene() { // main drawScene function
 function loadLevel(){
     oBricks.objs = new Array(oBricks.r); // fill-in bricks
     if(oLevel.level == 0){
+        oLevel.bricksNo = 4;    
         for (i=0; i < oBricks.r; i++) {
             oBricks.objs[i] = new Array(oBricks.c);
             for (j=0; j < oBricks.c; j++) {
@@ -162,7 +163,15 @@ function loadLevel(){
                     oBricks.objs[i][j] = 1;
             }
         }
-    }if(oLevel.level == 1){
+    }if(oLevel.level == 1){    
+        oLevel.bricksNo = 32;
+        oBricks.objs = [[1, 1, 1, 1, 1, 1, 1, 1], 
+                        [1, 0, 0, 0, 0, 0, 0, 1],
+                        [1, 0, 1, 1, 1, 1, 0, 1],
+                        [1, 0, 1, 1, 1, 1, 0, 1],
+                        [1, 0, 0, 0, 0, 0, 0, 1],
+                        [1, 1, 1, 1, 1, 1, 1, 1]];
+    }if(oLevel.level == 2){
         oLevel.bricksNo = 24;
         for (i=0; i < oBricks.r; i++) {
             oBricks.objs[i] = new Array(oBricks.c);
@@ -171,7 +180,7 @@ function loadLevel(){
                     oBricks.objs[i][j] = 1;
             }
         }
-    }else if(oLevel.level == 2){
+    }else if(oLevel.level == 3){
         oLevel.bricksNo = 48;
         for (i=0; i < oBricks.r; i++) {
             oBricks.objs[i] = new Array(oBricks.c);
