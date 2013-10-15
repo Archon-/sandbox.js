@@ -220,11 +220,11 @@ $(function(){
     }
 */
 
-    aSounds[0] = new Audio('media/snd1.wavX');
+    aSounds[0] = new Audio('media/snd1.wav');
     aSounds[0].volume = 0.9;
-    aSounds[1] = new Audio('media/snd2.wavX');
+    aSounds[1] = new Audio('media/snd2.wav');
     aSounds[1].volume = 0.9;
-    aSounds[2] = new Audio('media/snd3.wavX');
+    aSounds[2] = new Audio('media/snd3.wav');
     aSounds[2].volume = 0.9;
 
     iStart = setInterval(drawScene, 10); // loop drawScene
