@@ -149,7 +149,8 @@ function drawScene() { // main drawScene function
         ctx.fillText('Last Points: ' + sLastPoints, 600, 490);
     }
 
-    console.log('level: '+oLevel.level+', bricks: '+oLevel.bricksNo);
+    //console.log('level: '+oLevel.level+', bricks: '+oLevel.bricksNo);
+    console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
 }
 
 function loadLevel(){
