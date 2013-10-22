@@ -150,7 +150,7 @@ function drawScene() { // main drawScene function
     }
 
     //console.log('level: '+oLevel.level+', bricks: '+oLevel.bricksNo);
-    console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
+    //console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
 }
 
 function loadLevel(){
@@ -235,6 +235,36 @@ $(function(){
     sLastTime = localStorage.getItem('last-time');
     sLastPoints = localStorage.getItem('last-points');
 
+    function keyDown(e){
+        var keyCode = e.keyCode;
+        switch (keyCode) {
+            case 37: // 'Left' key
+                bLeftBut = true;
+                break;
+            case 39: // 'Right' key
+                bRightBut = true;
+                break;
+        }
+        console.log('KEY CODE: '+keyCode);
+    }
+
+    function keyUp(e){
+        var keyCode = e.keyCode;
+        switch (keyCode) {
+            case 37: // 'Left' key
+                bLeftBut = false;
+                break;
+            case 39: // 'Right' key
+                bRightBut = false;
+                break;
+        }
+        console.log('KEY CODE: '+keyCode);
+    }
+
+    document.getElementById('body').addEventListener('keydown', keyDown, false);
+    document.getElementById('body').addEventListener('keyup', keyUp, false);
+
+    /*
     $(window).keydown(function(event){ // keyboard-down alerts
         switch (event.keyCode) {
             case 37: // 'Left' key
@@ -255,6 +285,7 @@ $(function(){
                 break;
         }
     });
+    */
 
     var iCanvX1 = $(canvas).offset().left;
     var iCanvX2 = iCanvX1 + width;
