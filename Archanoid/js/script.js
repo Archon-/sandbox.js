@@ -150,7 +150,7 @@ function drawScene() { // main drawScene function
     }
 
     //console.log('level: '+oLevel.level+', bricks: '+oLevel.bricksNo);
-    //console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
+    console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
 }
 
 function loadLevel(){
@@ -190,6 +190,11 @@ function loadLevel(){
             }
         }
     }
+    
+    oBall.x = 400;
+    oBall.y = 300;
+    oBall.dx = 0.5;
+    oBall.dy = -5;
 }
 
 // initialization
