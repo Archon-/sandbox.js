@@ -1,0 +1,17 @@
+body {
+  margin: 2em 0;
+  text-align: center;
+}
+
+body::before {
+  display: none;
+  content: '{ "current": "small", "all": ["small"] }';
+}
+
+@media (min-width: 45.75em) {
+  body::before { content: '{ "current": "medium", "all": ["small", "medium"] }' }
+}
+
+@media (min-width: 66em) {
+  body::before { content: '{ "current": "large", "all": ["small", "medium", "large"] }' }
+}
