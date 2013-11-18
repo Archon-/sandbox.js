@@ -52,6 +52,10 @@ var Game = {
         var imageObj = new Image();
         imageObj.src = 'images/img2.png';
         this.ctx.drawImage(imageObj, 0, 0);
+
+        this.ctx.fillStyle = "black";
+        this.ctx.font = "bold 32px Arial";
+        this.ctx.fillText("Responsive Canvas 2", 200, 200);
     },
 
     // Handle all events
