@@ -1,5 +1,14 @@
 // Center scaled canvas on screen using CSS3
 
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
 var Game = {
 
     init: function () {
@@ -27,6 +36,14 @@ var Game = {
         // Reflow canvas size/margin on resize
         window.addEventListener('resize', this, false);
         this.reflow();
+
+        var i = 0;
+
+        (function animloop(){
+          requestAnimFrame(animloop);
+            Game.render(i);
+            i += 1;
+        })();
     },
 
     reflow: function () {
@@ -48,14 +65,6 @@ var Game = {
         var rule = "translate(" + offset[0] + "px, " + offset[1] + "px) scale(" + scale + ")";
         this.element.style.transform = rule;
         this.element.style.webkitTransform = rule;
-
-        var imageObj = new Image();
-        imageObj.src = 'images/img2.png';
-        this.ctx.drawImage(imageObj, 0, 0);
-
-        this.ctx.fillStyle = "black";
-        this.ctx.font = "bold 32px Arial";
-        this.ctx.fillText("Responsive Canvas 2", 200, 200);
     },
 
     // Handle all events
@@ -81,6 +90,30 @@ var Game = {
                 break;
         }
 
+    },
+
+    render: function(i){
+        var imageObj = new Image(),
+            today = new Date(),
+            h = today.getHours(),
+            m = today.getMinutes(),
+            s = today.getSeconds();
+
+        Game.clearScreen();
+        console.log('Render ...');
+
+        imageObj.src = 'images/img2.png';
+        this.ctx.drawImage(imageObj, 0, 0);
+
+        this.ctx.fillStyle = "black";
+        this.ctx.font = "bold 32px Arial";
+        this.ctx.fillText("Responsive Canvas 2", 200, 200);
+        this.ctx.fillText('Time: '+h+':'+m+':'+s, 200, 300);
+        this.ctx.fillText('Render counter: '+i, 200, 400);
+    },
+
+    clearScreen: function(){
+        this.ctx.clearRect (0, 0, 640, 960);
     }
 
 };
