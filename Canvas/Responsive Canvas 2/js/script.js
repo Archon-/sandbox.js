@@ -107,9 +107,9 @@ var Game = {
 
         this.ctx.fillStyle = "black";
         this.ctx.font = "bold 32px Arial";
-        this.ctx.fillText("Responsive Canvas 2", 200, 200);
-        this.ctx.fillText('Time: '+h+':'+m+':'+s, 200, 300);
-        this.ctx.fillText('Render counter: '+i, 200, 400);
+        this.ctx.fillText("Responsive Canvas 2", 100, 200);
+        this.ctx.fillText('Time: '+h+':'+m+':'+s, 100, 300);
+        this.ctx.fillText('Render counter: '+i, 100, 400);
     },
 
     clearScreen: function(){
