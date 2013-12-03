@@ -150,7 +150,7 @@ function drawScene() { // main drawScene function
     }
 
     //console.log('level: '+oLevel.level+', bricks: '+oLevel.bricksNo);
-    console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
+    //console.log('x: '+oBall.x+', y: '+oBall.y+', dx: '+oBall.dx+', dy: '+oBall.dy+', r: '+oBall.r);
 }
 
 function loadLevel(){
@@ -268,6 +268,7 @@ $(function(){
 
     document.getElementById('body').addEventListener('keydown', keyDown, false);
     document.getElementById('body').addEventListener('keyup', keyUp, false);
+    canvas.addEventListener('mousemove', changePadMouse, false);
 
     /*
     $(window).keydown(function(event){ // keyboard-down alerts
@@ -291,7 +292,7 @@ $(function(){
         }
     });
     */
-
+    /*
     var iCanvX1 = $(canvas).offset().left;
     var iCanvX2 = iCanvX1 + width;
     $('#scene').mousemove(function(e) { // binding mousemove event
@@ -300,6 +301,22 @@ $(function(){
             oPadd.x = Math.min(ctx.canvas.width - oPadd.w, oPadd.x);
         }
     });
+    */
+    function changePadMouse(e){
+        var mouseX, mouseY;
+
+        if(e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        }else if(e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+
+        oPadd.x = Math.max(mouseX - (oPadd.w/2), 0);
+        oPadd.x = Math.min(ctx.canvas.width - oPadd.w, oPadd.x);
+        //console.log('mouseX: '+mouseX+', mouseY: '+mouseY);
+    }
 });
 
 function countTimer() {
