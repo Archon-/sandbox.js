@@ -269,6 +269,7 @@ $(function(){
     document.getElementById('body').addEventListener('keydown', keyDown, false);
     document.getElementById('body').addEventListener('keyup', keyUp, false);
     canvas.addEventListener('mousemove', changePadMouse, false);
+    canvas.addEventListener('touchmove', changePadTouch, false);
 
     /*
     $(window).keydown(function(event){ // keyboard-down alerts
@@ -316,6 +317,13 @@ $(function(){
         oPadd.x = Math.max(mouseX - (oPadd.w/2), 0);
         oPadd.x = Math.min(ctx.canvas.width - oPadd.w, oPadd.x);
         //console.log('mouseX: '+mouseX+', mouseY: '+mouseY);
+    }
+
+    function changePadTouch(e){
+        e.preventDefault();
+        var targetEvent =  e.touches.item(0);  
+        oPadd.x = Math.max(targetEvent.clientX - (oPadd.w/2), 0);
+        oPadd.x = Math.min(ctx.canvas.width - oPadd.w, oPadd.x);
     }
 });
 
