@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'KGTenThousandReasons';
+    src: url('../fonts/KGTenThousandReasons.ttf');
+}
+
+@font-face {
+    font-family: 'KGTenThousandReasonsAlt';
+    src: url('../fonts/KGTenThousandReasonsAlt.ttf');
+}
+
+@font-face {
+    font-family: 'rayando';
+    src: url('../fonts/rayando.ttf');
+}
+
+canvas {
+    background: url('../images/bg5.jpg');
+}

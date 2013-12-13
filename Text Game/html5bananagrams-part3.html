@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>HTML5 Bananagrams</title>
-
+		<link rel="stylesheet" href="css/style.css"> 
        <style type="text/css">
         #canvas-container {
             border: black 1px solid;
@@ -124,6 +124,12 @@
 				addTile(x, y);
 				x = x + TILE_TOTAL_WIDTH;
 			}
+			ctx.font         = '38px rayando';
+				ctx.fillStyle = 'white';
+				ctx.textBaseline = 'top';
+				ctx.fillText  ('Szym vs Agatka', 25, 25);
+				ctx.font = '20px sans-serif';
+				ctx.textBaseline = 'top';
 		}
 
 		function initTiles() {
@@ -215,6 +221,13 @@
 				}
 				// Indicate that the canvas no longer needs to be redrawn
 				redrawCanvas = false;
+
+				ctx.font         = '38px rayando';
+				ctx.fillStyle = 'white';
+				ctx.textBaseline = 'top';
+				ctx.fillText  ('Szym vs Agatka', 25, 25);
+				ctx.font = '20px sans-serif';
+				ctx.textBaseline = 'top';
 			}
 		}
 
