@@ -82,6 +82,10 @@
 			this.letter = '';
 			this.value = 0;
 			this.selected = false;
+			this.lastPos = {
+				x: 0,
+				y: 0
+			}
 		}
 
 		function init() {				
@@ -168,10 +172,6 @@
 				var tile = new Tile;
 				tile.letter = possibleLetters[i];
 				tile.value = values[i];
-				this.lastPos = {
-					x: 0,
-					y: 0
-				}
 
 				// Add the tile to the tiles array
 				tiles.push(tile);
@@ -189,6 +189,8 @@
 			var tile = tiles.splice(index, 1)[0];
 			tile.x = x;
 			tile.y = y;
+			tile.lastPos.x = x;
+			tile.lastPos.y = y;
 
 			// Add the tile to the tilesInPlay array and
 			// indicate taht the canvas needs to be redrawn
@@ -364,7 +366,7 @@
 							// or if the the right or leftmost tiles hit the one of the borders previously and the
 							// mouse X coordinate has now passed the stored X coordinate when the tile hit the border
 							if ((rightmostTile.x + TILE_TOTAL_WIDTH <= WIDTH && leftmostTile.x >= 0) || (mouseX <= offRightX) || (mouseX >= offLeftX)) {
-								tile.x = tile.x + changeInX;	                               
+								tile.x = tile.x + changeInX;                              
 							}
 						}	                   
 
@@ -443,10 +445,10 @@
 					// and height of the tile will give us the distance
 					// the tile is from the left and top border's of the
 					// slot the tile's x and y coordinates lie
-					if(tile.x > 100)
+					//if(tile.x > 100)
 						var offsetX = (tile.x % TILE_TOTAL_WIDTH);
-					else
-						var offsetX = 300;
+					//else
+					//	var offsetX = 300;
 					var offsetY = (tile.y % TILE_TOTAL_HEIGHT);
 
 					// If the offsetX is within the defined distance
@@ -465,8 +467,16 @@
 					// into a slot.  Note that if either of the above
 					// conditions were true, the offset will be a negative
 					// number thus moving the tile to the right or down
-					tile.x = tile.x - offsetX;
-					tile.y = tile.y - offsetY;
+					var backBrick = false;
+					if(tile.x < 100){
+						tile.x = tile.lastPos.x;
+						tile.y = tile.lastPos.y;
+						backBrick = true;
+					}else{
+						tile.x = tile.x - offsetX;
+					}
+					if(backBrick === false)
+						tile.y = tile.y - offsetY;
 
 					moveToEmptySlot(tile);                   
 					needsRedraw();
@@ -492,7 +502,7 @@
 		}
 				
 		// Ensures that the passed in tile is not stacked on top of another tile
-		function moveToEmptySlot(tile) {	           
+		function moveToEmptySlot(tile) {           
 			var count = 0;
 			var slotsToMove = 1;
 
