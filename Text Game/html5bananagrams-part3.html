@@ -168,6 +168,10 @@
 				var tile = new Tile;
 				tile.letter = possibleLetters[i];
 				tile.value = values[i];
+				this.lastPos = {
+					x: 0,
+					y: 0
+				}
 
 				// Add the tile to the tiles array
 				tiles.push(tile);
@@ -439,7 +443,10 @@
 					// and height of the tile will give us the distance
 					// the tile is from the left and top border's of the
 					// slot the tile's x and y coordinates lie
-					var offsetX = (tile.x % TILE_TOTAL_WIDTH);
+					if(tile.x > 100)
+						var offsetX = (tile.x % TILE_TOTAL_WIDTH);
+					else
+						var offsetX = 300;
 					var offsetY = (tile.y % TILE_TOTAL_HEIGHT);
 
 					// If the offsetX is within the defined distance
