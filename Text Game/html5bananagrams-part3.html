@@ -26,6 +26,8 @@
 		var CANVAS_LEFT = 9;
 		var CANVAS_TOP = 9;
 		var CANVAS_BOTTOM = 800;
+		var CANVAS_WIDTH = 810;
+		var CANVAS_HEIGHT = 810;
 		var INTERVAL = 20; 				    // How often to redraw the canavas (ms)
 
 		var TILE_WIDTH = 28;                // SThe width of each tile
@@ -208,6 +210,25 @@
 			// Only draw the canvas if it is not valid
 			if (redrawCanvas) {
 				clear(ctx);
+
+				// draw map
+				for(var i = 0; i < 19; i++){
+					ctx.beginPath();
+					ctx.moveTo(95, 150+(i*30));
+					ctx.lineTo(745, 150+(i*30));
+					ctx.globalAlpha = 0.7;
+					ctx.strokeStyle = '#ffffff';
+					ctx.stroke();
+				}
+				for(var i = 0; i < 21; i++){
+					ctx.beginPath();
+					ctx.moveTo(120+(i*30), 125);
+					ctx.lineTo(120+(i*30), 715);
+					ctx.globalAlpha = 0.7;
+					ctx.strokeStyle = '#ffffff';
+					ctx.stroke();
+				}
+				ctx.globalAlpha = 1;
 
 				// draw the unselected tiles first so they appear under the selected tiles
 				for (var i = 0; i < tilesInPlay.length; i++) {
@@ -468,15 +489,20 @@
 					// conditions were true, the offset will be a negative
 					// number thus moving the tile to the right or down
 					var backBrick = false;
-					if(tile.x < 100){
+					if(tile.x < 75 || tile.x > CANVAS_WIDTH - 75){
 						tile.x = tile.lastPos.x;
 						tile.y = tile.lastPos.y;
 						backBrick = true;
 					}else{
 						tile.x = tile.x - offsetX;
 					}
-					if(backBrick === false)
-						tile.y = tile.y - offsetY;
+					if(backBrick === false){
+						if(tile.y < 100 || tile.y > CANVAS_HEIGHT - 100){
+							tile.x = tile.lastPos.x;
+							tile.y = tile.lastPos.y;
+						}else
+							tile.y = tile.y - offsetY;
+					}
 
 					moveToEmptySlot(tile);                   
 					needsRedraw();
