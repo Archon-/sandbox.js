@@ -84,7 +84,7 @@
 			this.letter = '';
 			this.value = 0;
 			this.selected = false;
-			this.lastPos = {
+			this.startPos = {
 				x: 0,
 				y: 0
 			}
@@ -191,8 +191,8 @@
 			var tile = tiles.splice(index, 1)[0];
 			tile.x = x;
 			tile.y = y;
-			tile.lastPos.x = x;
-			tile.lastPos.y = y;
+			tile.startPos.x = x;
+			tile.startPos.y = y;
 
 			// Add the tile to the tilesInPlay array and
 			// indicate taht the canvas needs to be redrawn
@@ -490,16 +490,16 @@
 					// number thus moving the tile to the right or down
 					var backBrick = false;
 					if(tile.x < 75 || tile.x > CANVAS_WIDTH - 75){
-						tile.x = tile.lastPos.x;
-						tile.y = tile.lastPos.y;
+						tile.x = tile.startPos.x;
+						tile.y = tile.startPos.y;
 						backBrick = true;
 					}else{
 						tile.x = tile.x - offsetX;
 					}
 					if(backBrick === false){
 						if(tile.y < 100 || tile.y > CANVAS_HEIGHT - 100){
-							tile.x = tile.lastPos.x;
-							tile.y = tile.lastPos.y;
+							tile.x = tile.startPos.x;
+							tile.y = tile.startPos.y;
 						}else
 							tile.y = tile.y - offsetY;
 					}
