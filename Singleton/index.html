@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Sleep function</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+		var person = new function() {
+		    this.setName = function(name) {
+		        this.name = name;
+		    }
+		    this.sayHi = function() {
+		        return 'Hi, my name is ' + this.name;
+		    }
+		}
+		person.setName('Archon');
+		console.log(person.sayHi());
+	</script>
+</body>
+</html>
+
