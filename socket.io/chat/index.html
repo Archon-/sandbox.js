@@ -24,6 +24,7 @@
           $('form').submit(function(){
             socket.emit('chat message', $('#m').val());
             $('#m').val('');
+            console.log('client emit msg.');
             return false;
           });
           socket.on('chat message', function(msg){
