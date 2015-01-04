@@ -330,3 +330,11 @@ $(function(){
 function countTimer() {
     iElapsed++;
 }
+
+$(function(){
+    $('#reload').on('click', function(e){
+        e.preventDefault();
+
+        location.reload();
+    });
+});

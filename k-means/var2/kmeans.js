@@ -45,7 +45,7 @@ function setup() {
 
     dataExtremes = getDataExtremes(data);
     dataRange = getDataRanges(dataExtremes);
-    means = initMeans(6);
+    means = initMeans(4);
 
     makeAssignments();
     draw();
@@ -100,7 +100,7 @@ function initMeans(k) {
 
     if ( ! k )
     {
-        k = 3;
+        k = 6;
     }
 
     while (k--)
