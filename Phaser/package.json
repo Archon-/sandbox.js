@@ -1,0 +1,26 @@
+{
+  "name": "Phaser_Experiments",
+  "version": "0.0.1",
+  "description": "A few experiments with Phaser",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Archon-/sandbox.js.git"
+  },
+  "keywords": [
+    "phaser",
+    "test"
+  ],
+  "author": "Archon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Archon-/sandbox.js/issues"
+  },
+  "homepage": "https://github.com/Archon-/sandbox.js",
+  "dependencies": {
+    "phaser": "^2.3.0"
+  }
+}
